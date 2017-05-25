@@ -1,7 +1,66 @@
 #include "iterator.h"
 
-NullIterator::NullIterator(Base* ptr) : Iterator(ptr) {}
+OperatorIterator::OperatorIterator(Base* ptr) : Iterator(ptr) {}
+void OperatorIterator::first()
+{
+  if(self_ptr->get_left() != NULL)
+  {
+    current_ptr = self_ptr->get_left();
+  }
+}
+void OperatorIterator::next()
+{
+  if(current_ptr == self_ptr->get_left())
+  {
+    current_ptr = self_ptr->get_right();
+  }
+  else if(current_ptr == self_ptr->get_right())
+  {
+    current_ptr = NULL;
+  }
+}
+bool OperatorIterator::is_done()
+{
+  if(current_ptr == NULL)
+  {
+    return true;
+  }
+  return false;
+}
+Base* OperatorIterator::current()
+{
+  return current_ptr;
+}
 
+UnaryIterator::UnaryIterator(Base* ptr) : Iterator(ptr) {}
+void UnaryIterator::first()
+{
+  if(self_ptr->get_left() != NULL)
+  {
+    current_ptr = self_ptr->get_left();
+  }
+}
+void UnaryIterator::next()
+{
+  if(current_ptr == self_ptr->get_left())
+  {
+    current_ptr = NULL;
+  }
+}
+bool UnaryIterator::is_done()
+{
+  if(current_ptr == NULL)
+  {
+    return true;
+  }
+  return false;
+}
+Base* UnaryIterator::current()
+{
+  return current_ptr;
+}
+
+NullIterator::NullIterator(Base* ptr) : Iterator(ptr) {}
 void NullIterator::first(){}
 void NullIterator::next(){}
 bool NullIterator::is_done()

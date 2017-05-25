@@ -5,6 +5,7 @@
 #include <iostream>       // std::cout
 #include <stack>          // std::stack
 using namespace std;
+
 class Composite;
 class Base;
 
