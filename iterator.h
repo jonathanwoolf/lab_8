@@ -2,6 +2,7 @@
 #define __ITERATOR_H__
 #include "composite.h"
 class Composite;
+class Base;
 
 class Iterator {
     protected:

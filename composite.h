@@ -37,7 +37,7 @@ class Op: public Base {
 
         Base* get_left();
         Base* get_right();
-        double evaluate(); 
+        double evaluate();
         void print();
         Iterator* create_iterator();
 };
