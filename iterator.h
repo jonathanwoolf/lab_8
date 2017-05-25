@@ -1,5 +1,6 @@
 #ifndef __ITERATOR_H__
 #define __ITERATOR_H__
+
 #include "composite.h"
 class Composite;
 class Base;

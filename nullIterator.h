@@ -8,9 +8,9 @@ class NullIterator : public Iterator {
 		NullIterator(Base* ptr);
 
 		void first();
-        	void next();
-        	bool is_done();
-        	Base* current();
+    void next();
+    bool is_done();
+    Base* current();
 };
 
 #endif
