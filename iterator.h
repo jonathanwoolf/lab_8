@@ -15,7 +15,7 @@ class Iterator {
         Base* current_ptr;
 
     public:
-        Iterator (Base* ptr) { this->self_ptr = ptr; }
+        Iterator (Base* ptr){ this->self_ptr = ptr; };
 
         /*Sets up the iterator to start at the beginning of traversal*/
         virtual void first() = 0;
@@ -63,7 +63,6 @@ class NullIterator : public Iterator {
 class PreOrderIterator : public Iterator {
 	protected:
 		stack<Iterator*> iterators;
-    Base* ptr;
 	public:
 		PreOrderIterator(Base* ptr);
 
