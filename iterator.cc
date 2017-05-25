@@ -96,7 +96,7 @@ void PreOrderIterator::next() {
   iterators.push(iter);
 	//As long as the top iterator on the stack is done, pop it off the
 	//stack and then advance whatever iterator is now on top of the stack
-  while(iter->is_done() && !iterators.empty()){
+  while(iterators.top()->is_done() && iterators.size() > 1){
     iterators.pop();
     if (!iterators.empty()){
       iterators.top()->next();
@@ -107,7 +107,7 @@ void PreOrderIterator::next() {
 }
 bool PreOrderIterator::is_done() {
 	//Return true if there are no more elements on the stack to iterate
-  if (iterators.empty()){
+  if (iterators.size() == 1 && iterators.top()->is_done()){
     return true;
   }
   else
