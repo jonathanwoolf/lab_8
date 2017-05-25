@@ -2,6 +2,7 @@
 #define __ITERATOR_H__
 
 #include "composite.h"
+
 class Composite;
 class Base;
 
@@ -24,6 +25,36 @@ class Iterator {
 
         /*Return the element the iterator is currently at*/
         virtual Base* current() = 0;
+};
+
+class OperatorIterator : public Iterator {
+	public:
+		OperatorIterator(Base* ptr);
+
+    void first();
+    void next();
+    bool is_done();
+    Base* current();
+};
+
+class UnaryIterator : public Iterator {
+	public:
+		UnaryIterator(Base* ptr);
+
+		void first();
+    void next();
+    bool is_done();
+    Base* current();
+};
+
+class NullIterator : public Iterator {
+	public:
+		NullIterator(Base* ptr);
+
+		void first();
+    void next();
+    bool is_done();
+    Base* current();
 };
 
 #endif
