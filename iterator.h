@@ -2,6 +2,9 @@
 #define __ITERATOR_H__
 
 #include "composite.h"
+#include <stack>
+
+using namespace std;
 
 class Composite;
 class Base;
