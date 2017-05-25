@@ -1,5 +1,8 @@
 #include "composite.h"
-
+#include <iostream>       // std::cout
+#include <stack>          // std::stack
+#include <vector>         // std::vector
+#include <deque>
 //--------------------------------------------------------------------------
 // Op Class
 //--------------------------------------------------------------------------
@@ -76,4 +79,3 @@ Root::Root(Base* child) : UnaryOperator(child) { };
 
 void Root::print() { cout << "ROOT"; }
 double Root::evaluate() { return this->child->evaluate(); };
-

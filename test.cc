@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "composite.h"
-
+#include <stack> 
 using namespace std;
 
 int main() {
