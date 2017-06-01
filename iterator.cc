@@ -100,8 +100,6 @@ void PreOrderIterator::next() {
     iterators.pop();
     if (!iterators.empty()){
       iterators.top()->next();
-
-
   }
 }
 }
