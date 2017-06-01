@@ -54,6 +54,7 @@ class Operator: public Base {
         Base* get_right();
         virtual double evaluate() = 0;	//Note: this is implicit in the inheritance, but can also be made explicit
         Iterator* create_iterator();
+        virtual void accept(Visitor*) = 0;
 };
 
 class UnaryOperator: public Base {
