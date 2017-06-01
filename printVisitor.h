@@ -2,6 +2,9 @@
 #define __PRINTVISITOR_H__
 
 #include "composite.h"
+#include "iterator.h"
+
+class Op;
 
 class Visitor {
 	private:
@@ -24,21 +27,13 @@ class PrintVisitor : public Visitor {
 	public:
 		PrintVisitor();
 
-		void rootNode() {}		//For visiting a root node (do nothing)
-		void sqrNode() {output.append("^2")};		    //For visiting a square node
-		void multNode() {output.append("*")};		  //For visiting a multiple node
-		void subNode() {output.append("-")};		    //For visiting a subtraction node
-		void addNode(){output.append("-")};		    //For visiting an add node
-		void opNode(Op* op){
-			std::ostringstream strs;
-			strs << op->evaluate();
-			std::string str = strs.str();
-			output.append(str)};	//For visiting a leaf node
-		void execute(){
-			for (unsigned int i=0; i < output.size(); i++){
-				cout << output[i] << ", "
-			}
-		};		    //Prints all visited nodes
+		void rootNode();		//For visiting a root node (do nothing)
+		void sqrNode();		    //For visiting a square node
+		void multNode();		  //For visiting a multiple node
+		void subNode();		    //For visiting a subtraction node
+		void addNode();	    //For visiting an add node
+		void opNode(Op* op);
+		void execute();		    //Prints all visited nodes
 };
 
 #endif

@@ -25,7 +25,7 @@ class Base {
         virtual Iterator* create_iterator() = 0;
         virtual Base* get_left() = 0;
         virtual Base* get_right() = 0;
-        virtual void accept(Visitor*) = 0
+        virtual void accept(Visitor*) = 0;
 };
 
 //Leaf Class
@@ -80,7 +80,6 @@ class Add: public Operator {
         virtual void accept(Visitor*);
         void print();
         double evaluate();
-        virtual void accept(Visitor*);
 };
 
 class Sub: public Operator {
@@ -90,7 +89,6 @@ class Sub: public Operator {
         virtual void accept(Visitor*);
         void print();
         double evaluate();
-        virtual void accept(Visitor*);
 };
 
 class Mult: public Operator {
@@ -100,7 +98,6 @@ class Mult: public Operator {
         virtual void accept(Visitor*);
         void print();
         double evaluate();
-        virtual void accept(Visitor*);
 };
 
 class Sqr: public UnaryOperator {
@@ -110,7 +107,6 @@ class Sqr: public UnaryOperator {
         virtual void accept(Visitor*);
         void print();
         double evaluate();
-        virtual void accept(Visitor*);
 };
 
 class Root: public UnaryOperator {
@@ -120,7 +116,6 @@ class Root: public UnaryOperator {
         virtual void accept(Visitor*);
         void print();
         double evaluate();
-        virtual void accept(Visitor*);
 };
 
 #endif //__COMPOSITE_CLASS__

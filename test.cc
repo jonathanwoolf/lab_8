@@ -2,6 +2,7 @@
 #include <vector>
 #include "composite.h"
 #include <stack>
+#include "printVisitor.h"
 using namespace std;
 
 int main() {
@@ -16,8 +17,9 @@ int main() {
 
 	cout << "--- PreOrder Iteration ---" << endl;
 	PreOrderIterator* pre_itr = new PreOrderIterator(root);
+	Visitor* visit = new Visitor();
 	for(pre_itr->first(); !pre_itr->is_done(); pre_itr->next()) {
-		pre_itr->current()->accept();
+		pre_itr->current()->accept(visit);
 	}
 	pre_itr->execute();
 };
