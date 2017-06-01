@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "composite.h"
-#include <stack> 
+#include <stack>
 using namespace std;
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
 	cout << "--- PreOrder Iteration ---" << endl;
 	PreOrderIterator* pre_itr = new PreOrderIterator(root);
 	for(pre_itr->first(); !pre_itr->is_done(); pre_itr->next()) {
-		pre_itr->current()->print();
-		cout << endl;
+		pre_itr->current()->accept();
 	}
+	pre_itr->execute();
 };
