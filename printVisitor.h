@@ -1,6 +1,8 @@
 #ifndef __PRINTVISITOR_H__
 #define __PRINTVISITOR_H__
 
+#include "composite.h"
+
 class Visitor {
 	private:
 		std::string output;
