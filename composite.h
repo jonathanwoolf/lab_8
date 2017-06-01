@@ -56,7 +56,7 @@ class Operator: public Base {
         Operator(Base* l, Base* r);
         Base* get_left();
         Base* get_right();
-        virtual double evaluate();	//Note: this is implicit in the inheritance, but can also be made explicit
+        virtual double evaluate()=0;	//Note: this is implicit in the inheritance, but can also be made explicit
         Iterator* create_iterator();
         virtual void accept(Visitor*);
 };

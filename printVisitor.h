@@ -25,7 +25,7 @@ class PrintVisitor : public Visitor {
 		std::string output;
 
 	public:
-		PrintVisitor();
+		PrintVisitor() {}
 
 		void rootNode();		//For visiting a root node (do nothing)
 		void sqrNode();		    //For visiting a square node

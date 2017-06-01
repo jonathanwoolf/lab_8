@@ -17,9 +17,9 @@ int main() {
 
 	cout << "--- PreOrder Iteration ---" << endl;
 	PreOrderIterator* pre_itr = new PreOrderIterator(root);
-	Visitor* visit = new Visitor();
+	Visitor* visit = new PrintVisitor();
 	for(pre_itr->first(); !pre_itr->is_done(); pre_itr->next()) {
 		pre_itr->current()->accept(visit);
 	}
-	pre_itr->current()->evaluate();
+	visit->execute();
 };
