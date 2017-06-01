@@ -21,5 +21,5 @@ int main() {
 	for(pre_itr->first(); !pre_itr->is_done(); pre_itr->next()) {
 		pre_itr->current()->accept(visit);
 	}
-	pre_itr->execute();
+	pre_itr->current()->evaluate();
 };

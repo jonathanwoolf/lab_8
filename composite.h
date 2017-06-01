@@ -13,6 +13,8 @@ using namespace std;
 class Iterator;
 class NullIterator;
 class UnaryIterator;
+class Visitor;
+class PrintVisitor;
 
 //Abstract Base Class
 class Base {
